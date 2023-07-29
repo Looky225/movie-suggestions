@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/* Définition des couleurs principales et secondaires pour le site */
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+/* Style de l'en-tête du site */
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--primary-color);
+
+}
+
+/* Style du lien vers la page d'accueil */
+.home-link {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: inherit;
+    text-decoration: none;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+/* Style du lien vers la page d'accueil lors du survol */
+.home-link:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style du corps du site */
+body {
+    background-color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* Style des éléments SVG */
+svg {
+    border: 1px solid #ccc;
+}
+
+/* Style du texte */
+text {
+    font-family: inherit;
+}
+
+/* Style de l'axe du graphique */
+.axis .domain {
+    stroke: #bbb;
+}
+
+/* Style des marques de graduation (ticks) sur les axes */
+.axis .tick line {
+    stroke: #bbb;
+    stroke-width: 0.5;
+    stroke-dasharray: 4, 2;
+}
+
+/* Style des étiquettes des axes */
+.axes-labels text {
+    font-size: 0.6em;
+    fill: #444;
+}
+
+/* Style des marques de graduation (ticks) sur l'axe des x */
+.x .tick line {
+    stroke: white;
+}
+
+/* Style des boutons */
+button {
+    outline: none;
+    color: #555;
+    border-color: #eee;
+    background: #fefefe;
+    padding: 3px 10px;
+    font-family: Poppins;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+/* Style des boutons lors du survol */
+button:hover {
+    background: #f7f7f7;
+}
+
+/* Style des boutons lorsqu'ils sont sélectionnés */
+button:focus {
+    background: #e7e7e7;
+}
+
+
+/* Style des infobulles */
+.tooltip {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    background: #eee;
+    max-width: 200px;
+}
+
+/* Style de l'en-tête des infobulles */
+.tip-header {
+    border-bottom: 2px solid white;
+    padding: 0.9rem 1rem;
+}
+
+/* Style du corps des infobulles */
+.tip-body {
+    padding: 0.2rem 0;
+}
+
+/* Style des titres h3 et h4 */
+h3,
+h4 {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+/* Style des titres h4 */
+h4 {
+    font-weight: normal;
+}
+
+/* Style des informations dans l'infobulle */
+.tip-info {
+    margin: 0;
+    padding: 0.3rem 1em;
+    font-size: 0.8em;
+}
+
+/* Style des informations paires dans l'infobulle */
+.tip-info:nth-of-type(even) {
+    background: #e0e0e0;
+}
+
+
+/* Style des éléments SVG et du conteneur des éléments sélectionnés */
+svg,
+.selected-container {
+    border: 1px solid #ccc;
+}
+
+/* Style du corps du site et du texte */
+body,
+text {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style de l'axe du graphique */
+.axis .domain {
+    stroke: #bbb;
+}
+
+/* Style des marques de graduation (ticks) sur les axes */
+.axis .tick line {
+    stroke: #bbb;
+    stroke-width: 0.5;
+    stroke-dasharray: 4, 2;
+}
+
+/* Style des étiquettes des axes */
+.axes-labels text {
+    font-size: 0.6em;
+    fill: #444;
+}
+
+/* Style de la section du graphique */
+.chart-section {
+    margin: 1rem;
+}
+
+/* Style du conteneur du graphique à points et des éléments sélectionnés */
+.scatter-selected-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Style du conteneur du graphique */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Style du conteneur des éléments sélectionnés */
+.selected-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+/* Style de l'en-tête du conteneur des éléments sélectionnés */
+.selected-header {
+    background: #f0f0f0;
+    color: #777;
+    padding: 0.5rem 2rem;
+    text-align: right;
+}
+
+/* Style du corps du conteneur des éléments sélectionnés */
+.selected-body {
+    overflow: auto;
+    font-size: 0.8em;
+    cursor: default;
+}
+
+/* Style du titre du conteneur des éléments sélectionnés */
+.selected-title {
+    font-weight: bold;
+}
+
+/* Style des éléments sélectionnés */
+.selected-element {
+    margin: 0.5em;
+    padding: 0.5em;
+    transition: background-color 200ms ease;
+}
+
+/* Style des éléments sélectionnés lors du survol */
+.selected-element:hover {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importation de la bibliothèque D3.js pour la visualisation de données -->
+    <script src="node_modules/d3/dist/d3.min.js"></script>
+    <!-- Importation de la bibliothèque Validator.js pour la validation des données -->
+    <script src="node_modules/validator/validator.min.js"></script>
+    <!-- Lien vers la feuille de style CSS externe -->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Lien vers la page d'accueil -->
+        <a href="index.html" class="home-link">Home</a>
+    </header>
+
+    <!-- Conteneur pour les graphiques -->
+    <div class="chart-container">
+
+        <!-- Section pour le graphique à barres -->
+        <div class="chart-section">
+            <div class="bar-chart-container"></div>
+
+            <!-- Contrôles pour le graphique à barres -->
+            <div class="controls">
+                <button data-name="revenue">Revenue</button>
+                <button data-name="budget">Budget</button>
+                <button data-name="popularite">Popularite</button>
+            </div>
+        </div>
+
+        <!-- Conteneur pour le graphique à points et les éléments sélectionnés -->
+        <div class="scatter-selected-container">
+            <div class="chart-section">
+                <div class="scatter-plot-container"></div>
+
+                <!-- Infobulle pour le graphique à points -->
+                <div class="tooltip">
+                    <div class="tip-header">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="tip-body"></div>
+                </div>
+            </div>
+
+            <!-- Conteneur pour les éléments sélectionnés -->
+            <div class="selected-container">
+                <div class="selected-header">Selection</div>
+                <div class="selected-body"></div>
+            </div>
+        </div>
+
+        <!-- Section pour le graphique en ligne -->
+        <div class="chart-section">
+            <div class="line-chart-container"></div>
+        </div>
+
+    </div>
+
+    <!-- Script JS pour la page -->
+    <script src="app.js"></script>
+</body>
+</body>
+
+</html>

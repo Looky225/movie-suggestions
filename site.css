@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/* Applique la propriété box-sizing à tous les éléments de la page, ce qui affecte la façon dont la largeur et la hauteur sont calculées */
+*{
+    box-sizing: border-box;
+}
+
+/* Définition des couleurs principales et secondaires pour le site */
+:root{
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+/* Style du corps du site */
+body{
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* Style de l'en-tête du site */
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+
+/* Style du champ de recherche */
+.search{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+}
+
+/* Style du champ de recherche lorsqu'il est sélectionné */
+.search.focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+
+/* Style du texte d'espace réservé dans le champ de recherche */
+.search::placeholder{
+    color: #7378c5;
+}
+
+/* Style de la section principale du site */
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style des éléments de film */
+.movie{
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color:  var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style des images de film */
+.movie img{
+    width: 100%;
+}
+
+/* Style des informations de film */
+.movie-info{
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Style des titres h3 dans les informations de film */
+.movie-info h3{
+    margin-top: 0;
+}
+
+/* Style des éléments span dans les informations de film */
+.movie-info span{
+    background-color:  var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+
+}
+
+/* Style des éléments span verts dans les informations de film */
+.movie-info span.green{
+    color:lightgreen;
+}
+
+/* Style des éléments span oranges dans les informations de film */
+.movie-info span.orange{
+    color: orange;
+}
+
+/* Style des éléments span rouges dans les informations de film */
+.movie-info span.red{
+    color: red;
+}
+
+/* Style de l'aperçu du film */
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+/* Style de l'aperçu du film lors du survol */
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+/* Style des tags de recherche */
+#tags{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+/* Style des tags individuels */
+.tag{
+    color: white;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Style des tags en surbrillance */
+.tag.highlight{
+    background-color: red;
+}
+
+/* Style du message affiché lorsqu'il n'y a pas de résultats */
+.no-results{
+    color: white;
+}
+
+/* Style de la pagination */
+.pagination{
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Style des numéros de page */
+.page{
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* Style des numéros de page désactivés */
+.page.disabled{
+    cursor: not-allowed;
+    color: grey;
+}
+
+/* Style du numéro de page actuel */
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Style du bouton "En savoir plus" */
+.know-more{
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+
+/* Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Positionne le contenu à l'intérieur de l'overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+ /* Les liens de navigation à l'intérieur de l'overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* Lorsque vous passez la souris sur les liens de navigation, changez leur couleur */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* Lorsque vous passez la souris sur les liens de navigation, changez leur couleur */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+  /* Style pour cacher les éléments avec la classe "embed" */
+  .embed.hide{
+    display: none;
+  }
+
+  /* Style pour afficher les éléments avec la classe "embed" */
+  .embed.show{
+    display: inline-block;
+  }
+
+   /* Style des flèches */
+  .arrow{
+    position: absolute;
+  }
+
+  /* Style de la flèche gauche */
+  .arrow.left-arrow{
+    top: 50%;
+    left: 5%;
+    transform : translateY(-50%);
+  }
+
+   /* Style de la flèche droite */
+  .arrow.right-arrow{
+    top: 50%;
+    right: 5%;
+    transform : translateY(-50%);
+  }
+
+   /* Style des points de navigation */
+  .dots{
+    margin-top: 100px;  
+    margin-bottom: 100px; 
+  }
+
+    /* Style des points individuels */
+  .dots .dot{
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px; 
+  }
+
+  /* Style du point actif */
+  .dots .dot.active{
+    border-color: orange;
+  }
+
+  /* Style du lien vers les graphiques */
+  .charts-link {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: inherit;
+    text-decoration: none;
+    margin-left: 20px;
+    text-align: center;
+}
+
+/* Style du lien vers les graphiques lors du survol */
+.charts-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+}
+

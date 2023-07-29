@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Lien vers la feuille de style CSS externe -->
+    <link rel="stylesheet" href="site.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Formulaire de recherche -->
+        <form id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+
+        <!-- Lien vers la page des graphiques -->
+        <a href="charts.html" class="charts-link">Charts</a>
+
+    </header>
+
+    <!-- Div pour les tags -->
+    <div id="tags">
+    </div>
+
+    <!-- Overlay pour le menu de navigation -->
+    <div id="myNav" class="overlay">
+
+        <!-- Bouton pour fermer le menu de navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Contenu de l'overlay -->
+        <div class="overlay-content" id="overlay-content"></div>
+
+        <!-- Boutons pour naviguer dans l'overlay -->
+
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8592;</a>
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow">&#8594;</a>
+
+
+    </div>
+    <!-- Contenu principal de la page -->
+    <main id="main">
+    </main>
+
+    <!-- Pagination pour naviguer entre les pages -->
+    <div class="pagination">
+        <div class="page disabled" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next page</div>
+    </div>
+
+    <!-- Script JS pour la page -->
+    <script src="site.js"></script>
+</body>
+
+</html>
